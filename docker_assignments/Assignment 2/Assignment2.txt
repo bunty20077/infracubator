@@ -1,0 +1,37 @@
+FROM golang:alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the source code to the working directory
+COPY . /app
+
+# Build the Go app
+RUN go build -o main .
+
+# Expose port 8081 for the application to listen on
+EXPOSE 8080
+
+# Run the Go app when the container starts
+CMD ["go", "run", "main.go"]
+
+
+
+#build image 
+ docker build -t demo-go-app .
+
+ #run the app
+docker run -p 9080:8080 demo-go-app
+
+#test endpoint
+curl --location --request GET 'http://localhost:9080/'
+
+#tag image with v1
+docker tag demo-go-app bunty20077/learning:v1
+
+#history
+docker history learning
+
+#push image to dockerhub
+docker login
+docker push bunty20077/learning:v1

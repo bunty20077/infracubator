@@ -1,0 +1,20 @@
+1.Create a volume named my_volume.
+
+docker volume create my_volume
+
+2.Create container and attach my_volume.
+
+docker run --name myubuntusecondcontainer -d -it -v my_volume:/home ubuntu:latest sh
+
+
+3.change something in the volume folder eg: add a file with some content.
+
+sudo cp /Users/sayantan.tarafdar/Desktop /var/lib/docker/volumes/my_volume/_data
+
+
+4.create a second container mounted with the same volume, Check if
+file exists?
+
+docker run --name myubuntusecondcontainer -d -it -v my_volume:/home ubuntu:latest sh
+docker exec -it <container_name> sh
+Yes file exists
