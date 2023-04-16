@@ -3,6 +3,15 @@
 Docker Assignments
 
 ```bash
+Assignment - 1
+
+
+1. Start an nginx container.
+2. Port forward to local and check.
+3. Check logs.
+4. Go inside the container.
+5. Stop the container.
+
 
 Assignment - 2
 
@@ -27,5 +36,14 @@ Assignment - 4
 2. Create a container and attach it to my-volume
 3. Change something in the volume folder and add a file with some content.
 4. Create a second container mounted with same volume . Check if the file exists or not.
+
+
+Assignment - 5
+
+1. Create docker-compose file for go-app
+2. docker-compose up
+3. Use / endpoint to check the service running
+4. Use /vote endpoint to add vote 
+5. docker-compose down
 
 ```
